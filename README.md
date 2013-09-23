@@ -6,11 +6,6 @@ Click the link below to view the blog article which explains exactly what and ho
 
 http://www.yearofmoo.com/2013/01/full-spectrum-testing-with-angularjs-and-karma.html
 
-## Demo
-The Application can be demoed via:
-
-http://yearofmoo-articles.github.com/angularjs-testing-article/app/
-
 ## Using the application
 
 Install grunt
@@ -25,36 +20,20 @@ And then be sure to install everything that the repo requires:
 Run the following command to start the server
 `grunt server`
 
-Then run this to watch the files and update assets
-`grunt`
-
 You can now access the website at
 `http://localhost:8000`
 
-### Test
+### End to end tests 
 
-#### Single Run Tests
+To run all e2e tests once `grunt test:e2e'
 
-Start the server to run e2e tests
-`grunt server`
+You should see Chrome browser open, run through UI and close
 
-You can run individual test suites by running the commands:
-`grunt test:unit`
-`grunt test:midway`
-`grunt test:e2e`
+### End to end tests using global karma
 
-Or everything in order:
-`grunt test`
+Should be equivalent to `grunt test:e2e`
 
+1. Install karma runner `npm install -g karma`
+2. `grunt server`
+3. `karma start test/karma-e2e.conf.js --single-run`
 
-#### Auto watching tests
-When watching tests, any save to a spec file will trigger karma to run the tests again
-for the specific test suite that is active at the time.
-
-Start the server to run e2e tests
-`grunt server`
-
-You can watch only watch one test suite a time.
-`grunt autotest:unit`
-`grunt autotest:midway`
-`grunt autotest:e2e`
